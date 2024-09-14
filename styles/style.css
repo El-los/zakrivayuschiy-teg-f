@@ -14,7 +14,449 @@
 
 */
 
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  color: var(--accent-color);
+  font-family: "Inter";
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-variation-settings: "wght" var(--card-text);
+}
+
+.content {
+  width: var(--content-width);
+  margin: auto;
+  min-inline-size: 375px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px auto;
+  border: 2px solid var(--accent-color);
+  padding-block: 135px 20px;
+  background-color: var(--background-color);
+  min-inline-size: 375px;
+}
+
+.header__logo {
+  justify-content: center;
+  color: var(--accent-color);
+  font-family: var(--accent-font-family);
+  font-weight: var(--card-text);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.502vw, 4.0625rem);
+  line-height: normal;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header__title {
+  margin-top: 23px;
+  font-family: var(--accent-font-family);
+  font-size: clamp(0.875rem, 0.6769rem + 0.845vw, 1.4375rem);
+  line-height: 23px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.theme-menu__list {
+  position: relative;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.theme-menu__item {
+  position: relative;
+}
+
+button.theme-menu__button {
+  padding: 0;
+}
+
+.theme-menu__button {
+  border: none;
+  outline: none;
+  font-family: var(--accent-font-family);
+  font-weight: var(--card-text);
+  font-size: 14px;
+  font-style: normal;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+}
+
+.theme-menu__button::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: var(--accent-color);
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+  transform: scaleX(1);
+}
+
+.theme-menu__button::before {
+  content: "";
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  left: -18px;
+  color: var(--accent-color);
+  animation: select 0.5s infinite alternate ease-in-out;
+}
+
+/* Стили для карточек */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.content_card {
+  border: 2px solid var(--accent-color);
+  background-color: var(--background-color);
+}
+
+.card_title {
+  padding: 6px 10px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: var(--card-title);
+ 
+}
+
+.card_picture_wrapper {
+  position: relative;
+  margin-bottom: 25px;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font-family);
+  font-weight: var(--card-text);
+  font-size: 14px;
+  mix-blend-mode: hard-light;
+  z-index: 1;
+  -webkit-text-stroke: 1px var(--label-stroke-color);
+}
+
+del {
+	color: var(--accent-color);
+	text-decoration: line-through;
+}
+
+
+.card_picture {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  max-inline-size: 700px;
+  inline-size: 100%;
+}
+
+.picture_top {
+  object-position: right top;
+  aspect-ratio: 16 / 9;
+}
+
+.card_picture_svg {
+  object-fit: contain;
+}
+
+.card_text_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card_text {
+  padding: 0px 25px;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 21px;
+  font-variation-settings: "wght" var(--card-text);
+}
+
+.card_footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  padding: 25px;
+}
+
+.card__icon-button {
+  border: 2px solid transparent;
+  padding: 0;
+  background-color: transparent;
+  transition: border 0.3s ease;
+  max-block-size: 38px;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:hover {
+  cursor: pointer;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+  outline: none;
+}
+
+.like-icon {
+  max-width: 39px;
+  max-height: 36px;
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  padding: 9px 0;
+}
+
+.animated__button {
+  position: relative;
+  border: 2px solid var(--accent-color);
+  font-family: var(--accent-font-family);
+  background-color: var(--background-color);
+  transition: box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.animated__button:focus {
+  outline: none;
+}
+
+.animated__button:hover {
+  cursor: pointer;
+}
+
+.animated__button:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color);
+  outline: none;
+}
+
+/* закрашывание кнопки, выезжающим псевдоэлемевтом */
+
+.animated__button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: var(--button-text-blend-mode-color);
+  transition: scale 0.5s ease-in-out;
+  transform-origin: 0;
+  mix-blend-mode: difference;
+  scale: 0 1;
+}
+
+.animated__button:hover::after {
+  scale: 1 1;
+}
+
+.safe_button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 50px auto 105px;
+  padding: 0;
+}
+
+.safe_button-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 19px 7px 19px;
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--accent-color);
+  font-family: var(--accent-font-family);
+  font-weight: var(--card-text);
+  font-size: 14px;
+  font-style: normal;
+  line-height: 90%;
+}
+
+.button_floppy {
+display: flex;
+justify-content: center;
+align-items: center;
+  min-width: 39px;
+  max-width: 39px;
+  fill: var(--accent-color);
+ 
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.safe_button-Modal_window[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 341px;
+  max-width: 357px;
+  border: 2px solid var(--accent-color);
+  padding: 30px 30px;
+  color: var(--accent-color);
+  background-color: var(--background-color);
+}
+
+.Modal_window_form {
+  display: flex;
+  justify-content: center;
+}
+
+.safe_button-Modal_window[open] .button_floppy {
+  min-width: 39px;
+  max-width: 39px;
+}
+
+.Modal_window-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Modal_window_text {
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.Modal_window_button {
+  min-width: 257px;
+  border: 2px solid var(--accent-color);
+  padding: 10px 17px;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: box-shadow 0.3s ease;
+  inline-size: 100%;
+}
+
+
+
+/* брейкпоинт 375 */
+
+@media (width <= 375px) {
+  .header__title {
+    margin-top: 16px;
+  }
+
+  .header {
+    padding-block: 120px 20px;
+  }
+
+  .label {
+    top: 20px;
+    right: 11px;
+  }
+
+  .safe_button-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button_floppy {
+    min-width: 28px;
+    max-width: 28px;
+  }
+
+  .safe_button-Modal_window[open] {
+    padding: 30px 42px;
+  }
+
+  :root {
+    --content-width: 375px;
+  }
+}
+
+
+/* Фильтры для карточек */
+
+.filter_contrast {
+  filter: contrast(120%) brightness(105%);
+}
+
+.filter-sepia_blur {
+    filter: sepia(0.6) blur(1px);
+}
+
+.filret_hue-rotate {
+  filter: hue-rotate(0.5turn);
+}
+
+.filret_invert {
+  filter: invert(80%);
+}
+
+.filret_grayscale {
+  filter: grayscale(30%);
+}
+
+.filter_dropshadow {
+  filter: drop-shadow(17px 0px gold);
+  animation: light 3s infinite linear ;
+}
+
+.filter-blur {
+    filter: blur(2px);
 }

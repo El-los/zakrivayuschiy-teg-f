@@ -12,3 +12,128 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+/* стрелочка в меню */
+
+@keyframes select {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: 4px;
+  }
+}
+
+/* анимация сердца */
+  
+  /* Искры */
+  
+  .sparks {
+    fill: transparent;
+  }
+  
+  .like-icon.is-liked .sparks {
+    animation: heart-sparks 0.3s 0.3s ease-in 1 alternate;
+  }
+  
+  @keyframes heart-sparks {
+    0% {
+      fill: transparent;
+    }
+  
+    50% {
+      fill: var(--heart-fill-color);
+    }
+  
+    100% {
+      fill: transparent;
+    }
+  }
+  
+  /* Все слои сердца без Искр: g с классом heart */
+  
+  .like-icon .heart {
+    transform-origin: 50% 50%;
+  }
+  
+  .like-icon.is-liked .heart {
+    animation: heart-zoom 0.3s 0.1s ease-in alternate;
+  }
+  
+  @keyframes heart-zoom {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.15);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Крест в центре сердца */
+  
+  .core {
+    fill: transparent;
+    transition: fill 0.3s linear 0.03s;
+  }
+  
+  .like-icon:hover .core {
+    fill: var(--heart-contour-color);
+    transition: fill 0.3s linear;
+  }
+  
+  .card__icon-button:active .core {
+    fill: var(--heart-fill-color);
+    transition: fill 0.03s linear;
+  }
+  
+  .like-icon.is-liked .core {
+    fill: var(--heart-fill-color);
+    transition: fill 0.03s linear;
+  }
+  
+  /* Основная заливка цердца */
+  
+  .main-body {
+    fill: transparent;
+    transition: fill 0.3s linear;
+  }
+  
+  .like-icon:hover .main-body {
+    fill: var(--heart-contour-color);
+    transition: fill 0.3s linear 0.05s;
+  }
+  
+  .card__icon-button:active .main-body {
+    fill: var(--heart-fill-color);
+    transition: fill 0.03s linear 0.05s;
+  }
+  
+  .like-icon.is-liked .main-body {
+    fill: var(--heart-fill-color);
+    transition: fill 0.03s linear 0.05s;
+  }
+  
+  /* Контур сердца */
+  
+  .contour {
+    fill: var(--heart-contour-color);
+    transition: fill 0.1s linear;
+  }
+  
+  .like-icon.is-liked .contour {
+    fill: var(--heart-fill-color);
+    transition: fill 0.3s linear 0.06s;
+  }
+  
+  @keyframes light {
+    0% {filter: drop-shadow(0px -2px gold)}
+    25% {filter: drop-shadow(17px 0px gold)}
+    50% {filter: drop-shadow(0px -2px gold)}
+    75% {filter: drop-shadow(-17px 0px gold)}
+    100% {filter: drop-shadow(0px -2px gold)}
+}
