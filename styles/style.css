@@ -14,7 +14,6 @@
 
 */
 
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -43,7 +42,7 @@
   align-items: center;
   margin: 100px auto;
   border: 2px solid var(--accent-color);
-  padding-block: clamp(120px, calc(5% + 100px), 135px) 20px;;
+  padding-block: clamp(120px, calc(5% + 100px), 135px) 20px;
   background-color: var(--background-color);
   min-inline-size: 375px;
 }
@@ -53,7 +52,7 @@
   color: var(--accent-color);
   font-family: var(--accent-font-family), fantasy;
   font-weight: var(--card-text);
-  font-size: clamp(3.063rem, 1.921rem + 4.923vw, 4.063rem);;
+  font-size: clamp(3.063rem, 1.921rem + 4.923vw, 4.063rem);
   line-height: normal;
   text-decoration: none;
   text-transform: uppercase;
@@ -160,7 +159,7 @@ button.theme-menu__button {
   font-size: 18px;
   font-style: normal;
   font-weight: var(--card-title);
- 
+  font-variation-settings: 'wght' var(--card-title);
 }
 
 .card_picture_wrapper {
@@ -180,13 +179,13 @@ button.theme-menu__button {
   mix-blend-mode: hard-light;
   z-index: 1;
   -webkit-text-stroke: 1px var(--label-stroke-color);
+  opacity: 0.5;
 }
 
 del {
-	color: var(--accent-color);
-	text-decoration: line-through;
+  color: var(--accent-color);
+  text-decoration: line-through;
 }
-
 
 .card_picture {
   display: block;
@@ -310,16 +309,16 @@ del {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   gap: 10px;
-  padding: 13px 19px 7px 19px;
+  padding: 13px 19px 18px 19px;
 }
 
 .button__text {
   position: relative;
   z-index: 1;
   color: var(--accent-color);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-weight: var(--card-text);
   font-size: 14px;
   font-style: normal;
@@ -327,12 +326,13 @@ del {
 }
 
 .button_floppy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 39px;
-  max-width: 39px;
+  z-index: 1;
+  display: block;
+  flex-shrink: 0;
+  min-width: 21px;
+  max-width: 21px;
   fill: var(--accent-color);
+  mix-blend-mode: var(--button-mix-blend-mode);
 }
 
 dialog::backdrop {
@@ -372,19 +372,15 @@ dialog::backdrop {
   text-transform: uppercase;
 }
 
-
-
-
 /* брейкпоинт 375 */
 
 @media (width <= 375px) {
   .header__title {
     margin-top: 16px;
-  }  
-    .theme-menu__list {
-      margin-top: 18px;
-    }
-  
+  }
+  .theme-menu__list {
+    margin-top: 18px;
+  }
 
   .label {
     top: 20px;
@@ -405,9 +401,7 @@ dialog::backdrop {
   .safe_button-modal_window[open] {
     padding: 30px 42px;
   }
-
 }
-
 
 /* Фильтры для карточек */
 
@@ -416,7 +410,7 @@ dialog::backdrop {
 }
 
 .filter-sepia_blur {
-    filter: sepia(0.6) blur(1px);
+  filter: sepia(0.6) blur(1px);
 }
 
 .filret_hue-rotate {
@@ -433,9 +427,9 @@ dialog::backdrop {
 
 .filter_dropshadow {
   filter: drop-shadow(17px 0px gold);
-  animation: light 3s infinite linear ;
+  animation: light 3s infinite linear;
 }
 
 .filter-blur {
-    filter: blur(2px);
+  filter: blur(2px);
 }
