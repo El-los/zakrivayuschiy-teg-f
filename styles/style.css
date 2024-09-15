@@ -254,6 +254,10 @@ del {
   padding: 9px 0;
 }
 
+.modal_window_form .card__like-button {
+  min-width: 290px;
+}
+
 .animated__button {
   position: relative;
   border: 2px solid var(--accent-color);
@@ -374,6 +378,8 @@ dialog::backdrop {
   text-transform: uppercase;
 }
 
+
+
 /* брейкпоинт 375 */
 
 @media (width <= 375px) {
@@ -403,6 +409,12 @@ dialog::backdrop {
   .safe_button-modal_window[open] {
     padding: 30px 34px;
     max-width: 341px;
+  }
+  .modal_window_form .card__like-button {
+    min-width: 257px;
+  }
+  .modal_window-title {
+  gap:12px;
   }
 }
 
