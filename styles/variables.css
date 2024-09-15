@@ -1,13 +1,12 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-    --main-font-family: "Inter", sans-serif;
+    --main-font-family: 'Inter', sans-serif;
     --accent-font-family: "PressStart2P";
     --card-text: 400;
     --card-title: 700;
     --background-color: #fff;
-  
-    --accent-color: #000;
+    
     --background-image: repeating-linear-gradient(
         to right,
         #d3d3d3 0 2px,
@@ -15,11 +14,12 @@
       ),
       repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
       linear-gradient(#e7e7e7 0.01%, #1a1a1a);
-    --content-width: 696px;
+    --content-width: clamp(21rem, 16.285rem + 30.516vw, 44rem);
     --label-stroke-color: rgba(255, 255, 255, 0.6);
     --button-text-blend-mode-color: #000;
     --heart-contour-color: #000;
     --heart-fill-color: #ff0000;
   }
+  
   
  

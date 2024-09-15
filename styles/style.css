@@ -23,13 +23,12 @@
   align-items: center;
   margin: 0 auto;
   color: var(--accent-color);
-  font-family: "Inter";
+  font-family: var(--main-font-family), sans-serif;
   background-color: var(--background-color);
   background-image: var(--background-image);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings: "wght" var(--card-text);
 }
 
 .content {
@@ -44,7 +43,7 @@
   align-items: center;
   margin: 100px auto;
   border: 2px solid var(--accent-color);
-  padding-block: 135px 20px;
+  padding-block: clamp(120px, calc(5% + 100px), 135px) 20px;;
   background-color: var(--background-color);
   min-inline-size: 375px;
 }
@@ -52,21 +51,20 @@
 .header__logo {
   justify-content: center;
   color: var(--accent-color);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-weight: var(--card-text);
-  font-size: clamp(3.0625rem, 2.7104rem + 1.502vw, 4.0625rem);
+  font-size: clamp(3.063rem, 1.921rem + 4.923vw, 4.063rem);;
   line-height: normal;
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .header__title {
-  margin-top: 23px;
-  font-family: var(--accent-font-family);
-  font-size: clamp(0.875rem, 0.6769rem + 0.845vw, 1.4375rem);
+  margin-top: 20px;
+  font-family: var(--accent-font-family), fantasy;
+  font-size: clamp(0.875rem, 0.233rem + 2.769vw, 1.438rem);
   line-height: 23px;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 
 .theme-menu__list {
@@ -74,8 +72,8 @@
   left: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 22px;
+  gap: 0.5rem;
+  margin-top: 24px;
 }
 
 .theme-menu__item {
@@ -89,8 +87,7 @@ button.theme-menu__button {
 .theme-menu__button {
   border: none;
   outline: none;
-  font-family: var(--accent-font-family);
-  font-weight: var(--card-text);
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
   font-style: normal;
   text-transform: uppercase;
@@ -130,7 +127,6 @@ button.theme-menu__button {
 
 .theme-menu__button::before {
   content: "";
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:disabled {
@@ -178,7 +174,7 @@ button.theme-menu__button {
   position: absolute;
   top: 25px;
   right: 25px;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-weight: var(--card-text);
   font-size: 14px;
   mix-blend-mode: hard-light;
@@ -198,11 +194,7 @@ del {
   object-position: center;
   max-inline-size: 700px;
   inline-size: 100%;
-}
-
-.picture_top {
-  object-position: right top;
-  aspect-ratio: 16 / 9;
+  max-height: 696px;
 }
 
 .card_picture_svg {
@@ -266,7 +258,7 @@ del {
 .animated__button {
   position: relative;
   border: 2px solid var(--accent-color);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   background-color: var(--background-color);
   transition: box-shadow 0.3s ease;
   white-space: nowrap;
@@ -335,20 +327,19 @@ del {
 }
 
 .button_floppy {
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 39px;
   max-width: 39px;
   fill: var(--accent-color);
- 
 }
 
 dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 }
 
-.safe_button-Modal_window[open] {
+.safe_button-modal_window[open] {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -360,36 +351,27 @@ dialog::backdrop {
   background-color: var(--background-color);
 }
 
-.Modal_window_form {
+.modal_window_form {
   display: flex;
   justify-content: center;
 }
 
-.safe_button-Modal_window[open] .button_floppy {
+.safe_button-modal_window[open] .button_floppy {
   min-width: 39px;
   max-width: 39px;
 }
 
-.Modal_window-title {
+.modal_window-title {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.Modal_window_text {
+.modal_window_text {
   line-height: 150%;
   text-transform: uppercase;
 }
 
-.Modal_window_button {
-  min-width: 257px;
-  border: 2px solid var(--accent-color);
-  padding: 10px 17px;
-  text-transform: uppercase;
-  background-color: transparent;
-  transition: box-shadow 0.3s ease;
-  inline-size: 100%;
-}
 
 
 
@@ -398,11 +380,11 @@ dialog::backdrop {
 @media (width <= 375px) {
   .header__title {
     margin-top: 16px;
-  }
-
-  .header {
-    padding-block: 120px 20px;
-  }
+  }  
+    .theme-menu__list {
+      margin-top: 18px;
+    }
+  
 
   .label {
     top: 20px;
@@ -410,7 +392,7 @@ dialog::backdrop {
   }
 
   .safe_button-content {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -420,13 +402,10 @@ dialog::backdrop {
     max-width: 28px;
   }
 
-  .safe_button-Modal_window[open] {
+  .safe_button-modal_window[open] {
     padding: 30px 42px;
   }
 
-  :root {
-    --content-width: 375px;
-  }
 }
 
 
