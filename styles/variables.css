@@ -6,7 +6,7 @@
     --card-text: 400;
     --card-title: 700;
     --background-color: #fff;
-    
+    --accent-color: #000;
     --background-image: repeating-linear-gradient(
         to right,
         #d3d3d3 0 2px,
@@ -16,7 +16,7 @@
       linear-gradient(#e7e7e7 0.01%, #1a1a1a);
     --content-width: clamp(21rem, 16.285rem + 30.516vw, 44rem);
     --label-stroke-color: rgba(255, 255, 255, 0.6);
-    --button-text-blend-mode-color: #000;
+    --button-text-blend-mode-color: #fff;
     --heart-contour-color: #000;
     --heart-fill-color: #ff0000;
   }

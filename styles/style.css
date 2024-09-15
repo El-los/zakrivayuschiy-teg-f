@@ -298,7 +298,9 @@ del {
 
 .safe_button {
   display: flex;
+  flex-direction:row;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 8px;
   margin: 50px auto 105px;
@@ -309,9 +311,9 @@ del {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: baseline;
-  gap: 10px;
-  padding: 13px 19px 18px 19px;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 20px 15px 20px;
 }
 
 .button__text {
@@ -399,7 +401,8 @@ dialog::backdrop {
   }
 
   .safe_button-modal_window[open] {
-    padding: 30px 42px;
+    padding: 30px 34px;
+    max-width: 341px;
   }
 }
 
